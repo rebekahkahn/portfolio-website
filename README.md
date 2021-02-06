@@ -7,11 +7,12 @@ This project was primarily created with [Create React App](https://github.com/fa
 - Added switch (later will toggle dark and light theme)
 - Changed switch: it toggles itself between black and white
 - Added media query for gold line on About
+- Added font styles
 
 ## To Do (shorter term)
 
 - Delete jason2mq from packages (yarn remove doesn't work)
-- Design website
+- Add dark theme hook to toggle it
 
 ## Dependencies
 

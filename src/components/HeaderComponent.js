@@ -43,9 +43,15 @@ function Header() {
             />
           </div>
           <div className={classes.buttonGroup}>
-            <Button color="inherit">About</Button>
-            <Button color="inherit">Projects</Button>
-            <Button color="inherit">Contact</Button>
+            <Button className={classes.buttonFont} color="inherit">
+              About
+            </Button>
+            <Button className={classes.buttonFont} color="inherit">
+              Projects
+            </Button>
+            <Button className={classes.buttonFont} color="inherit">
+              Contact
+            </Button>
           </div>
         </Toolbar>
       </AppBar>
@@ -67,6 +73,9 @@ const useStyles = makeStyles((theme) => ({
   buttonGroup: {
     position: "fixed",
     right: "10px",
+  },
+  buttonFont: {
+    fontFamily: "Helvetica",
   },
   switch: {
     position: "fixed",

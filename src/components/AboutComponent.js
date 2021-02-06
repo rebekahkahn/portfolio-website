@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   paperName: {
+    fontFamily: "Big Shoulders Display",
     padding: theme.spacing(2),
     textAlign: "center",
     backgroundColor: "black",
