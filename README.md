@@ -5,17 +5,31 @@ This project was primarily created with [Create React App](https://github.com/fa
 ## Done (Feb 6, 2021)
 
 - Added switch (later will toggle dark and light theme)
+- Changed switch: it toggles itself between black and white
+- Added media query for gold line on About
 
 ## To Do (shorter term)
 
-- Add scss
+- Delete jason2mq from packages (yarn remove doesn't work)
 - Design website
 
 ## Dependencies
 
+Version of create react app:
+
 ```bash
 npx create-react-app@3.4.1
+```
+
+Core material-ui package
+
+```bash
 yarn add @material-ui/core
+```
+
+Packages for icons
+
+```bash
 yarn add font-awesome@4.7.0
 yarn add @material-ui/icons
 ```

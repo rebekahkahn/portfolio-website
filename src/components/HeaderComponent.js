@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
@@ -16,12 +16,27 @@ function Header() {
     setState({ ...state, [e.target.name]: e.target.checked });
   };
 
+  const PurpleSwitch = withStyles({
+    switchBase: {
+      color: "white",
+      "&$checked": {
+        color: "white",
+      },
+      color: "black",
+      "&$checked + $track": {
+        backgroundColor: "white",
+      },
+    },
+    checked: {},
+    track: {},
+  })(Switch);
+
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appbarColor}>
         <Toolbar>
           <div className={classes.switch}>
-            <Switch
+            <PurpleSwitch
               checked={state.checkedA}
               onChange={handleChange}
               name="checkedA"

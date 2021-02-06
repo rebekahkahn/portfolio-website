@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 
 function About() {
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <Grid container className={classes.container}>
@@ -57,7 +58,12 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     backgroundColor: "black",
     color: "white",
-    borderRight: "3px solid #D4AF37",
+    [theme.breakpoints.up("sm")]: {
+      borderRight: "3px solid #D4AF37",
+    },
+    [theme.breakpoints.down("xs")]: {
+      borderRight: "3px solid black",
+    },
   },
   roles: {
     textAlign: "left",
