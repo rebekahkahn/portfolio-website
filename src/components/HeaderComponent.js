@@ -33,7 +33,7 @@ function Header() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.appbarColor}>
+      <AppBar position="sticky" className={classes.appbarColor}>
         <Toolbar>
           <div className={classes.switch}>
             <PurpleSwitch
@@ -47,7 +47,7 @@ function Header() {
               About
             </Button>
             <Button className={classes.buttonFont} color="inherit">
-              Projects
+              Portfolio
             </Button>
             <Button className={classes.buttonFont} color="inherit">
               Contact
@@ -66,6 +66,8 @@ const useStyles = makeStyles((theme) => ({
   appbarColor: {
     backgroundColor: "black",
     color: "c9c9c9",
+    position: "-webkit-sticky",
+    marginBottom: 0,
   },
   menuButton: {
     marginRight: theme.spacing(2),

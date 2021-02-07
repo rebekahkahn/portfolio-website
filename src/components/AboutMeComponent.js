@@ -2,10 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import Fab from "@material-ui/core/Fab";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-function About() {
+function AboutMe() {
   const classes = useStyles();
 
   return (
@@ -13,29 +11,21 @@ function About() {
       <Grid container className={classes.container}>
         <Grid item xs={12} sm={6}>
           <Paper square className={classes.paperName} variant="outlined">
-            <h1>Rebekah Kahn</h1>
+            <h1>About Me</h1>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
           <Paper square className={classes.paper}>
             <Grid container className={classes.roles}>
               <Grid item xs={12}>
-                Responsive design
-              </Grid>
-              <Grid item xs={12}>
-                Web and Mobile apps
-              </Grid>
-              <Grid item xs={12}>
-                Client-side specialist
+                I am a graduate of Smith College '19 in Astronomy, and have
+                interned at places such as Yale University and NASA AMES for
+                computational astropyhysics. I am now a front-end web and native
+                app developer specializing in React, JavaScript, HTML and CSS.
               </Grid>
             </Grid>
           </Paper>
         </Grid>
-      </Grid>
-      <Grid container justify="center">
-        <Fab color="default" aria-label="scroll" className={classes.arrow}>
-          <ExpandMoreIcon className={classes.arrowButton} />
-        </Fab>
       </Grid>
     </div>
   );
@@ -84,6 +74,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default About;
+export default AboutMe;
 
 //add media query so that golden border disappears on smaller viewports
