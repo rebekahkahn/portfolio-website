@@ -2,24 +2,15 @@
 
 This project was primarily created with [Create React App](https://github.com/facebook/create-react-app) and [material-ui](https://material-ui.com/)
 
-## Done (Feb 6, 2021)
+## Done (Feb 7, 2021)
 
-- Added switch (later will toggle dark and light theme)
-- Changed switch: it toggles itself between black and white
-- Added media query for gold line on About
-- Added font styles, made appbar sticky
-- Designed portfolio page
+- Scaffolded out new project (properly)
 
 ## Design Ideas
-
-- Arrow bounces and once clicked, slides next section up
-
-## To Do
 
 ### Miscellaneous
 
 - Add react-router to site
-- Delete jason2mq from packages (yarn remove doesn't work)
 
 ### Design Choices (musing)
 
@@ -34,7 +25,7 @@ This project was primarily created with [Create React App](https://github.com/fa
 Version of create react app:
 
 ```bash
-npx create-react-app@3.4.1
+npx create-react-app portfolio-website
 ```
 
 Core material-ui package
@@ -46,7 +37,6 @@ yarn add @material-ui/core
 Packages for icons
 
 ```bash
-yarn add font-awesome@4.7.0
 yarn add @material-ui/icons
 ```
 
