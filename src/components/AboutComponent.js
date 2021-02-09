@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import Fab from "@material-ui/core/Fab";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 function About() {
   const classes = useStyles();
@@ -33,6 +35,34 @@ function About() {
           </Grid>
         </Grid>
       </Paper>
+      <Grid container justify="center">
+        <Fab color="default" aria-label="scroll" className={classes.scroll}>
+          <ExpandMoreIcon className={classes.arrowButton} />
+        </Fab>
+      </Grid>
+
+      <Paper>
+        <Grid container className={classes.container}>
+          <Grid item xs={12} sm={6}>
+            <Grid container className={classes.name}>
+              <Grid item xs={12}>
+                <h1>About Me</h1>
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <Grid container className={classes.roles}>
+              <Grid item xs={12}>
+                I am a graduate of Smith College '19 in Astronomy, and have
+                interned at places such as Yale University and NASA AMES for
+                computational astropyhysics. I am now a front-end web and native
+                app developer specializing in React, JavaScript, HTML and CSS.
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Paper>
     </div>
   );
 }
@@ -45,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       height: "70vh",
       alignItems: "center",
-      marginTop: "-30px",
     },
     [theme.breakpoints.down("xs")]: {
       height: "60vh",
@@ -60,6 +89,9 @@ const useStyles = makeStyles((theme) => ({
   roles: {
     padding: theme.spacing(2),
     textAlign: "left",
+  },
+  scroll: {
+    marginTop: "-22px",
   },
 }));
 
