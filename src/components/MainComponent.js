@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "./HeaderComponent";
 import About from "./AboutComponent";
 import Portfolio from "./PortfolioComponent";
 import Contact from "./ContactComponent";
@@ -21,7 +20,6 @@ class Main extends Component {
     return (
       <React.Fragment>
         <div>
-          <Header />
           <Switch>
             <Route path="/about" component={AboutPage} />
             <Route path="/portfolio" component={PortfolioPage} />

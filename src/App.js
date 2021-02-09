@@ -1,15 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import Main from "./components/MainComponent";
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "./theme";
-const App = () => (
-  <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Main />
-    </ThemeProvider>
-  </BrowserRouter>
-);
-export default App;
+import Switch from "@material-ui/core/Switch";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+
+export default function App() {
+  const [darkState, setDarkState] = useState(false);
+  const palletType = darkState ? "light" : "dark";
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: palletType,
+    },
+  });
+  const handleThemeChange = () => {
+    setDarkState(!darkState);
+  };
+
+  return (
+    <BrowserRouter>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <AppBar position="static" color="dark">
+          <Toolbar>
+            <Grid container>
+              <Grid container item xs={6} justify="flex-start">
+                <Switch checked={darkState} onChange={handleThemeChange} />
+              </Grid>
+              <Grid container item xs={6} justify="flex-end">
+                <Button component={Link} to={"/about"}>
+                  About
+                </Button>
+                <Button component={Link} to={"/portfolio"}>
+                  Portfolio
+                </Button>
+                <Button component={Link} to={"/contact"}>
+                  Contact
+                </Button>
+              </Grid>
+            </Grid>
+          </Toolbar>
+        </AppBar>
+        <Main />
+      </ThemeProvider>
+    </BrowserRouter>
+  );
+}
