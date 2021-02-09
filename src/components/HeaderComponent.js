@@ -27,10 +27,10 @@ export default function Header() {
       <AppBar position="static" color="dark">
         <Toolbar>
           <Grid container>
-            <Grid container item xs={6} justify="flex-start">
+            <Grid item xs={6} justify="flex-start">
               <Switch checked={darkState} onChange={handleThemeChange} />
             </Grid>
-            <Grid container item xs={6} justify="flex-end">
+            <Grid container xs={6} justify="flex-end">
               <Button component={Link} to={"/about"}>
                 About
               </Button>

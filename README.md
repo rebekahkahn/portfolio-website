@@ -2,22 +2,19 @@
 
 This project was primarily created with [Create React App](https://github.com/facebook/create-react-app) and [material-ui](https://material-ui.com/)
 
-## Done (Feb 7, 2021)
+## Done (Feb 9, 2021)
 
-- Scaffolded out new project (properly)
+- Added react-router to the website
+- Created a dark and light theme
+
+## To Do
+
+- Toggler to appear when on smaller devices for dropdown menu
 
 ## Design Ideas
 
-### Miscellaneous
-
-- Add react-router to site
-
-### Design Choices (musing)
-
-- Add dark theme hook to toggle it (difficult)
 - The arrow will bounce, then when you click it, a slide animation will bring up the next part of the page (to add later)
 - Will map over data so that code is not repeated after I get the layout finished (add very soon)
-- Learn material-ui theming etc. (to do very soon)
 - When you hover over links, a golden underline grows under the link (add at some point)
 
 ## Dependencies
@@ -55,3 +52,7 @@ yarn add material-ui-image
 - react
 - react-router
 - material-ui
+
+## References
+
+[Theming] (https://medium.com/heuristics/react-dark-mode-switch-in-material-ui-dashboard-82fcf1cded66)
