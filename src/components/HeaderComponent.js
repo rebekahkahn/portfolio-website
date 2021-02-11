@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <AppBar position="static" color="dark">
+      <AppBar position="fixed" color="dark">
         <Toolbar>
           <Grid container>
             <Grid item xs={6} justify="flex-start">

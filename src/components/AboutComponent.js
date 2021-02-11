@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Fab from "@material-ui/core/Fab";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Slide from "@material-ui/core/Slide";
 
 function About() {
   const classes = useStyles();
+
+  const [isClicked, setIsClicked] = useState(false);
+  const toggle = () => {
+    return setIsClicked(!isClicked);
+  };
 
   return (
     <div className={classes.root}>
@@ -36,33 +42,47 @@ function About() {
         </Grid>
       </Paper>
       <Grid container justify="center">
-        <Fab color="default" aria-label="scroll" className={classes.scroll}>
+        <Fab
+          onClick={toggle}
+          color="default"
+          aria-label="scroll"
+          className={classes.scroll}
+        >
           <ExpandMoreIcon className={classes.arrowButton} />
         </Fab>
       </Grid>
 
-      <Paper>
-        <Grid container className={classes.container}>
-          <Grid item xs={12} sm={6}>
-            <Grid container className={classes.name}>
-              <Grid item xs={12}>
-                <h1>About Me</h1>
+      <Slide
+        direction="up"
+        in={isClicked}
+        toggle={toggle}
+        mountOnEnter
+        unmountOnExit
+      >
+        <Paper>
+          <Grid container className={classes.container}>
+            <Grid item xs={12} sm={6}>
+              <Grid container className={classes.name}>
+                <Grid item xs={12}>
+                  <h1>About Me</h1>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
 
-          <Grid item xs={12} sm={6}>
-            <Grid container className={classes.roles}>
-              <Grid item xs={12}>
-                I am a graduate of Smith College '19 in Astronomy, and have
-                interned at places such as Yale University and NASA AMES for
-                computational astropyhysics. I am now a front-end web and native
-                app developer specializing in React, JavaScript, HTML and CSS.
+            <Grid item xs={12} sm={6}>
+              <Grid container className={classes.roles}>
+                <Grid item xs={12}>
+                  I am a graduate of Smith College '19 in Astronomy, and have
+                  interned at places such as Yale University and NASA AMES for
+                  computational astropyhysics. I am now a front-end web and
+                  native app developer specializing in React, JavaScript, HTML
+                  and CSS.
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </Paper>
+        </Paper>
+      </Slide>
     </div>
   );
 }
@@ -73,12 +93,13 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     [theme.breakpoints.up("sm")]: {
-      height: "70vh",
+      height: "75vh",
       alignItems: "center",
+      paddingTop: "60px",
     },
     [theme.breakpoints.down("xs")]: {
-      height: "60vh",
-      paddingTop: "60px",
+      height: "80vh",
+      paddingTop: "160px",
     },
   },
   name: {

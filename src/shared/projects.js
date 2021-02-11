@@ -1,21 +1,21 @@
 export const PROJECTS = [
   {
     id: 0,
-    title: "Mantisplace",
+    title: "Bootstrap",
     link: "https://github.com/rebekahkahn/mantisplace-bootstrap-design",
     description:
       "This is a bootstrap redesign of the website, mantisplace.com. It was built using bootstrap, sass, and jQuery.",
   },
   {
     id: 1,
-    title: "Mantisplace",
+    title: "React",
     link: "https://github.com/rebekahkahn/mantisplace-react-design",
     description:
       "This is a react redesign of the website, mantisplace.com. It was built using react, react-router, reactstrap, sass, and react-redux.",
   },
   {
     id: 2,
-    title: "Mantisplace",
+    title: "React Native",
     link: "https://github.com/rebekahkahn/mantisplace-reactnative-design",
     description:
       "This is a native mobile app. It was built using react, react-native, and react-native-paper.",

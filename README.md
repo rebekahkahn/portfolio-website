@@ -2,14 +2,13 @@
 
 This project was primarily created with [Create React App](https://github.com/facebook/create-react-app) and [material-ui](https://material-ui.com/)
 
-## Done (Feb 9, 2021)
+## Done (Feb 10, 2021)
 
-- Added react-router to the website
-- Created a dark and light theme
+- Thinking about how I want porfolio section to look
 
 ## To Do
 
-- Toggler to appear when on smaller devices for dropdown menu
+- Navbar Toggler to appear when on mobile (and smaler) devices for dropdown men
 
 ## Design Ideas
 
