@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import Fab from "@material-ui/core/Fab";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Slide from "@material-ui/core/Slide";
+import CardMedia from "@material-ui/core/CardMedia";
 
 function Portfolio() {
   const classes = useStyles();
@@ -68,13 +69,7 @@ function Portfolio() {
                   <h1>Project Title</h1>
                 </Grid>
                 <Grid item xs={12}>
-                  <p>
-                    I am a graduate of Smith College '19 in Astronomy, and have
-                    interned at places such as Yale University and NASA AMES for
-                    computational astropyhysics. I am now a front-end web and
-                    native app developer specializing in React, JavaScript, HTML
-                    and CSS.
-                  </p>
+                  <p>Project Description</p>
                 </Grid>
               </Grid>
             </Grid>
@@ -82,11 +77,7 @@ function Portfolio() {
             <Grid item xs={12} sm={6}>
               <Grid container className={classes.roles}>
                 <Grid item xs={12}>
-                  I am a graduate of Smith College '19 in Astronomy, and have
-                  interned at places such as Yale University and NASA AMES for
-                  computational astropyhysics. I am now a front-end web and
-                  native app developer specializing in React, JavaScript, HTML
-                  and CSS.
+                  <CardMedia image="/images/mantisplace-large.png" />
                 </Grid>
               </Grid>
             </Grid>
