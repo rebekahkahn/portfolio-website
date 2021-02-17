@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import Input from "@material-ui/core/Input";
 
 function Contact() {
   const classes = useStyles();
@@ -32,36 +31,40 @@ function Contact() {
 
           <Grid item xs={12} sm={6}>
             <Grid container className={classes.roles}>
-              <Grid item xs={12}>
-                <form noValidate autoComplete="off">
-                  <div>
-                    <TextField
-                      id="standard-full-width"
-                      label="First Name"
-                      value={values.firstName}
-                      onChange={handleChange}
-                    />
+              {/* <Grid item xs={12}> */}
+              <form noValidate autoComplete="off">
+                <div className={classes.theform}>
+                  <TextField
+                    style={{ margin: 8 }}
+                    id="name-first"
+                    label="First Name"
+                    value={values.firstName}
+                    onChange={handleChange}
+                    variant="outlined"
+                  />
 
+                  <TextField
+                    style={{ margin: 8 }}
+                    id="name-last"
+                    label="Last Name"
+                    value={values.lastName}
+                    onChange={handleChange}
+                    variant="outlined"
+                  />
+
+                  <Grid item xs={12}>
                     <TextField
-                      id="standard-full-width"
-                      label="Last Name"
-                      value={values.lastName}
+                      fullWidth
+                      style={{ margin: 8, paddingRight: 13 }}
+                      id="email"
+                      label="Email"
+                      value={values.email}
                       onChange={handleChange}
+                      variant="outlined"
                     />
-                  </div>
-                  <div>
-                    <Grid item xs={12} className="email">
-                      <Input
-                        placeholder="email@mail.com"
-                        fullWidth
-                        label="youremail@email.com"
-                        value={values.email}
-                        onChange={handleChange}
-                      />
-                    </Grid>
-                  </div>
-                </form>
-              </Grid>
+                  </Grid>
+                </div>
+              </form>
             </Grid>
           </Grid>
         </Grid>
@@ -99,9 +102,9 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(2),
       textAlign: "center",
     },
-  },
-  email: {
-    padding: theme.spacing(3),
+    theForm: {
+      border: "1px solid red",
+    },
   },
 }));
 
