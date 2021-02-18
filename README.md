@@ -2,9 +2,10 @@
 
 This project was primarily created with [Create React App](https://github.com/facebook/create-react-app) and [material-ui](https://material-ui.com/)
 
-## Done (Feb 10, 2021)
+## Done (Feb 18, 2021)
 
-- Thinking about how I want porfolio section to look
+- Editing contact form section...
+- Toggling appbar options on smaller screens...
 
 ## To Do
 

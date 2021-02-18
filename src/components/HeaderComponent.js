@@ -8,6 +8,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import MoreIcon from "@material-ui/icons/MoreVert";
 
 export default function Header() {
   const [darkState, setDarkState] = useState(false);
@@ -48,3 +49,6 @@ export default function Header() {
     </ThemeProvider>
   );
 }
+
+//more icon on smaller screens
+//hooks for more icon for dropdown of items that have been hidden on smaller screens
