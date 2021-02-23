@@ -9,6 +9,8 @@ This project was primarily created with [Create React App](https://github.com/fa
 
 ## To Do
 
+- Will change the color scheme of the website to be nicer
+
 - Navbar Toggler to appear when on mobile (and smaler) devices for dropdown men
 
 ## Design Ideas
