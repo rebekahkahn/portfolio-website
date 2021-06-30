@@ -2,21 +2,18 @@
 
 This project was primarily created with [Create React App](https://github.com/facebook/create-react-app) and [material-ui](https://material-ui.com/)
 
-## Done (Feb 18, 2021)
+## Done (June 30, 2021)
 
-- Editing contact form section...
-- Toggling appbar options on smaller screens...
+- Toggling appbar icon and options
+- Added portfolio projects with responsive design
 
 ## To Do
 
-- Will change the color scheme of the website to be nicer
-
-- Navbar Toggler to appear when on mobile (and smaler) devices for dropdown men
+- Fix the React Native picture (not appearing currently)
 
 ## Design Ideas
 
-- The arrow will bounce, then when you click it, a slide animation will bring up the next part of the page (to add later)
-- Will map over data so that code is not repeated after I get the layout finished (add very soon)
+- Will map over data so that code is not repeated after I get the layout finished
 - When you hover over links, a golden underline grows under the link (add at some point)
 
 ## Dependencies

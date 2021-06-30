@@ -4,13 +4,37 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Switch from "@material-ui/core/Switch";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
 import MoreIcon from "@material-ui/icons/MoreVert";
 
-export default function Header() {
+const useStyles = makeStyles((theme) => ({
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  sectionDesktop: {
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+    },
+  },
+  sectionMobile: {
+    display: "flex",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
+}));
+
+export default function PrimarySearchAppBar() {
   const [darkState, setDarkState] = useState(false);
   const palletType = darkState ? "light" : "dark";
   const darkTheme = createMuiTheme({
@@ -22,16 +46,77 @@ export default function Header() {
     setDarkState(!darkState);
   };
 
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const menuId = "primary-search-account-menu";
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    />
+  );
+
+  const mobileMenuId = "primary-search-account-menu-mobile";
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <Button component={Link} to={"/about"}>
+          About
+        </Button>
+      </MenuItem>
+      <MenuItem>
+        <Button component={Link} to={"/portfolio"}>
+          Portfolio
+        </Button>
+      </MenuItem>
+      <MenuItem>
+        <Button component={Link} to={"/contact"}>
+          Contact
+        </Button>
+      </MenuItem>
+    </Menu>
+  );
+
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <AppBar position="fixed" color="dark">
-        <Toolbar>
-          <Grid container>
-            <Grid item xs={6} justify="flex-start">
-              <Switch checked={darkState} onChange={handleThemeChange} />
-            </Grid>
-            <Grid container xs={6} justify="flex-end">
+      <div className={classes.grow}>
+        <AppBar position="fixed" color="dark">
+          <Toolbar>
+            <Switch checked={darkState} onChange={handleThemeChange} />
+            <div className={classes.grow} />
+            <div className={classes.sectionDesktop}>
               <Button component={Link} to={"/about"}>
                 About
               </Button>
@@ -41,14 +126,24 @@ export default function Header() {
               <Button component={Link} to={"/contact"}>
                 Contact
               </Button>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-      <Main />
+            </div>
+            <div className={classes.sectionMobile}>
+              <IconButton
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
+            </div>
+          </Toolbar>
+        </AppBar>
+        <Main />
+        {renderMobileMenu}
+        {renderMenu}
+      </div>
     </ThemeProvider>
   );
 }
-
-//more icon on smaller screens
-//hooks for more icon for dropdown of items that have been hidden on smaller screens
